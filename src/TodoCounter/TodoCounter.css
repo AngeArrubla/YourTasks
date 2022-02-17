@@ -1,0 +1,17 @@
+.TodoCounter{
+    text-align: center;
+    padding: 40px;
+}
+.TodoCounter h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: 110px;
+    color: #a19bd6;
+    text-shadow: 0px 0px 10px #61efe8;
+    margin: 0;
+}
+.TodoCounter h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgb(128, 128, 128);
+}

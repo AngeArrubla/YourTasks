@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.Container-TodosError{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.Container-TodosError p{
+    color: #afa1b1;
+    text-shadow: -2px 2px #61efe8;
+    letter-spacing: 2px;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+}
+.Container-TodosError img{
+    width: 400px;
+    height: auto;
+    opacity: 80%;
+
+    animation-name: img;
+    animation-duration: 7s;
+    animation-iteration-count:infinite;
+}
+@keyframes img {
+    50%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+}

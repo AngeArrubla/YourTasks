@@ -1,0 +1,22 @@
+.Content-image{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+.Content-image img{
+  width: auto;
+  height: 800px;
+}
+.Content-Tasks{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px;
+  border-radius: 100px;
+  border: 1px solid #727272;
+  margin: 100px 0;
+  box-shadow: inset 0px 0px 10px 2px #13131362;
+  background-color: #f0efff;
+}
+

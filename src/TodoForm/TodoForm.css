@@ -1,0 +1,76 @@
+form {
+    border-radius: 30px;
+    width: 100%;
+    max-width: 600px;
+    background: linear-gradient(150deg, rgb(248, 209, 253) 0%, rgb(204, 228, 253) 100%);
+    padding: 33px 40px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+label {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+    font-size: 60px;
+    text-align: center;
+    color: #a19bd6;
+    text-shadow: 0px 0px 10px #61efe8;
+    margin: 30px;
+}
+
+textarea {
+    background-color: #F9FBFC;
+    border: 1px solid #B9B4E4;
+    color: #303030;
+    box-shadow: 0px 5px 20px  rgba(0, 0, 0, 0.137);
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 12px;
+    margin-top: 40px;
+    height: 50px;
+    width: calc(100%-30px);
+    resize: none;
+}
+
+textarea::placeholder {
+    font-size: 30px;
+    font-weight: 100;
+    color: #979797;
+}
+
+textarea:focus {
+    outline-color: #61DAFA;
+}
+
+.TodoForm-buttonContainer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.TodoForm-buttonContainer button {
+    color: #363636;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    width: 150px;
+    height: 70px;
+    border-radius: 30px;
+    border: 1px solid #646464;
+    background: transparent;
+    box-shadow: 0px 0px 10px #52525267;
+}
+.TodoForm-buttonContainer button:hover {
+    cursor: pointer;
+    background-color: #B9B4E4;
+    border: 1px solid #ffffff;
+    transition: 0.5s;
+}
+
+.TodoForm-buttonContainer :nth-child(2) {
+    background-color: #61efe8;
+}

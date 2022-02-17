@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.Container-EmptyTodos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    animation-name: slidein;
+    animation-duration: 7s;
+    animation-iteration-count:infinite;
+}
+@keyframes slidein {
+    50%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+}
+.Container-EmptyTodos p{
+    color: #afa1b1;
+    text-shadow: -2px 2px #61efe8;
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+}
+.Container-EmptyTodos img{
+    width: 200px;
+    height: auto;
+    opacity: 80%;
+}
