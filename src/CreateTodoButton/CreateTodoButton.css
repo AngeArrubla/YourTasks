@@ -5,9 +5,6 @@
     border-radius: 50%;
     cursor: pointer;
     font-size: 50px;
-    position: fixed;
-    bottom: 15%;
-    left: 10%;
     font-weight: bold;
     color: #FAFAFA;
     display: flex;
