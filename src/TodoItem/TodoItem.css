@@ -3,7 +3,7 @@ section{
   justify-content: center;
 }
 .TodoItem {
-    background-color: #ffffffb2;
+    background-color: #ffffff;
     border-radius: 15px;
     position: relative;
     display: flex;
@@ -20,7 +20,7 @@ section{
     width: calc(100% - 100px);
     font-family: 'Poppins', sans-serif;
     font-weight: 100;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 24px;
 }
 .TodoItem-p--complete {

@@ -24,6 +24,7 @@ function AppUI(){
         openModal,
         setOpenModal,
     } = React.useContext(TodoContext);
+    console.log(searchedTodos)
     return(
         <React.Fragment>
 
@@ -40,8 +41,8 @@ function AppUI(){
                         key={todo.text}
                         text={todo.text}
                         completed={todo.completed}
-                        onComplete = {() => completeTodo(todo.text)}
-                        onDelete = {() => deleteTodo(todo.text)}
+                        onComplete = {() => completeTodo(todo)}
+                        onDelete = {() => deleteTodo(todo)}
                     />
                     ))}
                 </TodoList>

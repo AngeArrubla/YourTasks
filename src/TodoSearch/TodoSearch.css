@@ -15,7 +15,7 @@
     transition: width 1s, height 2s;
 }
 .todoSearch::placeholder {
-    color: #61efe8;
+    color: #464646;
     font-size: 12px;
 }
 .todoSearch:focus {

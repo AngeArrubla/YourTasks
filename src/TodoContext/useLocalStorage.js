@@ -6,39 +6,63 @@ function useLocalStorage(itemName, initialValue){
     const [loading, setLoading] = React.useState(true);
     const [item,setItem] = React.useState(initialValue)
 
-    React.useEffect(() => {
-        setTimeout(() => {
-            try {
-            const localStorangeItem = localStorage.getItem(itemName);
-            let parsedItem;
 
-            if (!localStorangeItem){
-                localStorage.setItem(itemName, JSON.stringify(initialValue));
-                parsedItem = initialValue;
-            }else{
-                parsedItem = JSON.parse(localStorangeItem);
+    const getItems = async() => {
+        setLoading(true);
+        fetch('http://localhost:3001/tareas')
+            .then(response => response.json())
+            .then(data => setItem(data))
+            .then(() => setLoading(false));
+    }
+
+    const saveTareas = async(newItem) => {
+        setLoading(true);
+        fetch('http://localhost:3001/tareas', {
+            method: 'POST',
+            body: JSON.stringify(newItem),
+            headers:{
+            'Content-Type': 'application/json'
             }
-            setItem(parsedItem);
-            setLoading(false);
-        }   catch(error) {
-            setError(error);
-        }
-    }, 1000);
-    });
+        }).then(() => getItems()).then(() => setLoading(false))
+    }
 
-    const saveItem = (newItem) => {
-        try {
-            const stringifiedItem = JSON.stringify(newItem);
-            localStorage.setItem(itemName, stringifiedItem);
-            setItem(newItem);
-        } catch(error) {
-        setError(error);
-        }
+    const completeTodo = async(newItem) => {
+        setLoading(true);
+        fetch('http://localhost:3001/tareas/' + newItem._id, {
+            method: 'PUT',
+            body: JSON.stringify({
+                text: newItem.text,
+                completed: !newItem.completed
+            }),
+            headers:{
+            'Content-Type': 'application/json'
+            }
+        }).then(() => getItems()).then(() => setLoading(false))
+    }
+
+    const deleteTodo = async(newItem) => {
+        setLoading(true);
+        fetch('http://localhost:3001/tareas/' + newItem._id, {
+            method: 'DELETE',
+            headers:{
+            'Content-Type': 'application/json'
+            }
+        }).then(() => getItems()).then(() => setLoading(false))
+    }
+
+    React.useEffect(() => {
+        getItems();
+    }, []);
+
+    const saveItem = async (newItem) => {
+        await saveTareas(newItem);
     };
 
     return {
         item,
         saveItem,
+        completeTodo,
+        deleteTodo,
         loading,
         error,
     };
